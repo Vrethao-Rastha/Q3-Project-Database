@@ -9,4 +9,37 @@ module.exports = {
        .then(data =>
     res.json(data));
   },
+
+
+  skills: function(req, res) {
+    knex('skills')
+      .then(data =>
+      res.json(data));
+  },
+
+  projects: function(req, res) {
+    knex('projects')
+      .then(data =>
+      res.json(data));
+  },
+
+  message: function(req, res) {
+    knex('message')
+      .then(data =>
+      res.json(data));
+  },
+
+  users: function(req, res) {
+    knex('users')
+      .then(data =>
+      res.json(data));
+  },
+
+  makePost: function(req, res) {
+    knex('posts')
+      .insert({user_name: 'Catherine',
+              content: 'req'})
+        .then(data =>
+        res.json(data))
+  }
 }
