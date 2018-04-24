@@ -6,9 +6,13 @@ module.exports = function(app){
 
   app.get('/skills', template.skills);
 
+  app.post('/skills/:user_name', template.addSkills)
+
   app.get('/projects', template.projects);
 
-  app.get('/message', template.message);
+  app.get('/message', template.getMessage);
+
+  app.post('/message/:user_name', template.addMessage);
 
   app.get('/users', template.users)
 

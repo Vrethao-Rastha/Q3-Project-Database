@@ -6,6 +6,7 @@ return knex.schema.createTable('users', function(table){
       table.string('user_name')
       table.string('avatar')
       table.string('password')
+      table.text('quote')
       table.timestamp('updated_at').defaultTo(knex.fn.now());
       table.timestamp('ucreated_at').defaultTo(knex.fn.now());
     })

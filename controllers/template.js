@@ -23,8 +23,17 @@ module.exports = {
       res.json(data));
   },
 
-  message: function(req, res) {
+  getMessage: function(req, res){
     knex('message')
+    .then(data =>
+    res.json(data))
+  },
+
+  addMessage: function(req, res) {
+    knex('message')
+    .insert({user_name: req.body.user_name,
+              target_user: 'Noel',
+             message: req.body.message})
       .then(data =>
       res.json(data));
   },
@@ -38,9 +47,9 @@ module.exports = {
   makePost: function(req, res) {
     knex('posts')
       .insert({user_name: 'Catherine',
-              content: req.body.content})
+              content: req.body.content}, "*")
         .then(data =>
-        res.json(data))
+        res.json(data[0]))
   },
 
   deletePost: function(req, res) {
@@ -48,6 +57,20 @@ module.exports = {
       .where('id', req.params.id)
         .del()
         .then(data =>
-          res.json(data))
+          res.json(req.params.id))
+  },
+
+  addSkills: function(req, res) {
+    knex('skills')
+      .where('user_name', req.body.user_name)
+      .then((skill)=>{
+        skill = skill[0];
+        knex('skills')
+          .where('user_name', req.body.user_name)
+          .update({skill: skill.skill+ ", "+req.body.skill}, "*")
+          .then(data =>
+            res.json(data[0]))
+      })
+
   },
 }
