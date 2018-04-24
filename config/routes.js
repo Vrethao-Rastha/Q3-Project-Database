@@ -13,4 +13,6 @@ module.exports = function(app){
   app.get('/users', template.users)
 
   app.post('/posts', template.makePost)
+
+  app.delete('/posts/:id', template.deletePost)
 }

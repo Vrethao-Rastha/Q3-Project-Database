@@ -41,5 +41,13 @@ module.exports = {
               content: req.body.content})
         .then(data =>
         res.json(data))
-  }
+  },
+
+  deletePost: function(req, res) {
+    knex('posts')
+      .where('id', req.params.id)
+        .del()
+        .then(data =>
+          res.json(data))
+  },
 }
