@@ -38,7 +38,7 @@ module.exports = {
   makePost: function(req, res) {
     knex('posts')
       .insert({user_name: 'Catherine',
-              content: 'req'})
+              content: req.body.content})
         .then(data =>
         res.json(data))
   }
