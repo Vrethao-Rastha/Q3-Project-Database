@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('posts').insert([
         {user_name: 'Catherine', content: 'Casting a full suit of Iron armor is a weighty task!'},
         {user_name: 'Catherine', content: 'Got the iron too hot, had to re-forge one of the greaves...'},
-        {user_name: 'Catherine', content: 'Amost done with my Lydia of Whiterun Armor!'},
+        {user_name: 'Catherine', content: 'Amost done with my Lydia of Whiterun Armor! Long live the Dovahkiin!! Long live Skyrim!!!'},
         {user_name: 'Catherine', content: '...I am the Iron Maiden'},
         {user_name: 'Catherine', content: 'Need some help with the tabard and fur collar, anyone with a heavy duty sewing rig on right now?'},
         {user_name: 'Joe', content: "Voltage is wrong on the capacitor output. Blew out all the LED's on the circuit." },

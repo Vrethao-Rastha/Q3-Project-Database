@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('skills').insert([
         {user_name: 'Catherine', skill: 'Welding, Ironwork'},
         {user_name: 'Joe', skill: 'LED and Supercapacitor Electronics, Sewing'},
-        {user_name: 'Micheal', skill: 'Resin Molding, Vaccum Table Fabrication'},
+        {user_name: 'Michael', skill: 'Resin Molding, Vaccum Table Fabrication'},
         {user_name: 'Tessa', skill: 'CnC Aluminum Fabrication, Lost Wax Method Casting'},
         {user_name: 'Noel', skill: 'Plasma Cutting, Steel Casting'},
 

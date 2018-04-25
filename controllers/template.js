@@ -31,9 +31,9 @@ module.exports = {
 
   addMessage: function(req, res) {
     knex('message')
-    .insert({user_name: req.body.user_name,
+    .insert({user_name: req.params.user_name,
               target_user: 'Noel',
-             message: req.body.message})
+             message: req.body.message}, "*")
       .then(data =>
       res.json(data));
   },
@@ -46,7 +46,7 @@ module.exports = {
 
   makePost: function(req, res) {
     knex('posts')
-      .insert({user_name: 'Catherine',
+      .insert({user_name: req.body.user_name,
               content: req.body.content}, "*")
         .then(data =>
         res.json(data[0]))
