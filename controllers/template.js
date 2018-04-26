@@ -41,7 +41,7 @@ module.exports = {
   users: function(req, res) {
     knex('users')
       .then(data =>
-      res.json(data));
+        res.json(data));
   },
 
   makePost: function(req, res) {
@@ -71,6 +71,11 @@ module.exports = {
           .then(data =>
             res.json(data[0]))
       })
-
   },
+
+  about: function(req, res) {
+    knex('about')
+      .then(data =>
+      res.json(data))
+  }
 }
