@@ -3,7 +3,6 @@ const knex = require("../db/knex.js");
 module.exports = {
   // CHANGE ME TO AN ACTUAL FUNCTION
   posts: function(req, res) {
-    console.log('req', req.body)
     knex('posts')
        .then(data =>
     res.json(data));
