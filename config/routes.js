@@ -21,4 +21,6 @@ module.exports = function(app){
   app.delete('/posts/:id', template.deletePost)
 
   app.get('/about', template.about)
+
+  app.get('/feature', template.feature)
 }

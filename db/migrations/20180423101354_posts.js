@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
       table.increments();
         table.string('user_name')
         table.text('content')
+        table.text('feature_content')
         table.timestamp('updated_at').defaultTo(knex.fn.now());
         table.timestamp('ucreated_at').defaultTo(knex.fn.now());
       })

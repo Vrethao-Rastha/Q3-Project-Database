@@ -3,9 +3,8 @@ const knex = require("../db/knex.js");
 module.exports = {
   // CHANGE ME TO AN ACTUAL FUNCTION
   posts: function(req, res) {
+    console.log('req', req.body)
     knex('posts')
-      //.where('user_name', req.params.user_name)
-
        .then(data =>
     res.json(data));
   },
@@ -77,5 +76,11 @@ module.exports = {
     knex('about')
       .then(data =>
       res.json(data))
-  }
+  },
+
+  feature: function(req, res) {
+    knex('feature_posts')
+      .then(data =>
+      res.json(data))
+  },
 }
