@@ -1,6 +1,9 @@
 //Update the name of the controller below and rename the file.
+const jwt = require('jsonwebtoken');
 const template = require("../controllers/template.js")
 module.exports = function(app){
+
+  app.post('/', template.login);
 
   app.get('/posts', template.posts);
 

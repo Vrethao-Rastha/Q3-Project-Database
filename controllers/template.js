@@ -1,7 +1,31 @@
 const knex = require("../db/knex.js");
+const jwt = require('jsonwebtoken')
 
 module.exports = {
   // CHANGE ME TO AN ACTUAL FUNCTION
+  login : function(req, res){
+    // const user = {
+    //   id: 1,
+    //   user_name: 'Catherine',
+    // }
+    knex('users').where('user_name', req.body.user_name)
+    .then(result => {
+      if (result.length < 1) {
+        res.sendStatus(403)
+      } else {
+        if (req.body.password === 'asdf') {
+          let user = result[0]
+          let token = jwt.sign({user}, 'the secret key...')
+          res.json({user, token})
+         } else {
+          res.sendStatus(406)
+        }
+      }
+    
+    })
+    .catch(err => res.json(err))
+  },
+
   posts: function(req, res) {
     knex('posts')
        .then(data =>
