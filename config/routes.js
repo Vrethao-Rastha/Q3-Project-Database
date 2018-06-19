@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const template = require("../controllers/template.js")
 module.exports = function(app){
 
+  app.options('*', cors())
+
   app.post('/', template.login);
 
   app.get('/posts', template.posts);
